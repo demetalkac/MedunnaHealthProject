@@ -37,7 +37,7 @@ Feature: US_020 Create new staff
     And Admin enters the user "581-01-0306" SSN for searching the existing staff
     And Admin clicks on Search User button for staff
     And Admin fills all the blanks
- #   Then Verify that all information has been filled
+#    Then Verify that all information has been filled
     Then close the application
 
   @US_020_TC_003_UI
@@ -140,7 +140,7 @@ Feature: US_020 Create new staff
     And close the connection
 
   @US_020_TC_002_DB
-  Scenario:Validate all staff with DB
+  Scenario:Validate a staff created with DB
     Given user connects to the database
     And Admin gets the column id "id" from "staff" staff table
     Then verify staff created_by list contains existing user id 22115

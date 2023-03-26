@@ -61,3 +61,13 @@ Feature: US_029 Create new country
     And Admin gets the column "name" from "country" country table
     Then verify the name column  contains of the created "Italy" country
     And close the connection
+
+
+  @US_029_TC_003_DB
+  Scenario:Admin should validate them with DB
+    Given user connects to the database
+    And Admin creates country name "countryname" from "country" country table to "name" column
+    Then verify that the name column gives the country created "Italy"
+    And close the connection
+
+

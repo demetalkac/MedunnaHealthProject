@@ -19,9 +19,20 @@ public class US_029_TC001_DB {
 
     }
 
-
     @Then("verify the name column  contains of the created {string} country")
     public void verifyTheNameColumnContainsOfTheCreatedCountry(String countryName) {
         assertTrue(namecolumnList.contains(countryName));
     }
+
+    @Given("Admin creates country name {string} from {string} country table to {string} column")
+    public void admin_creates_country_name_from_country_table_to_column(String countryName, String tableName, String columnNames) {
+       String query = "INSERT INTO "+tableName+"("+columnNames+") VALUES("+countryName+")";
+       JdbcUtils.insertDataIntoTable(query);
+    }
+
+    @Then("verify that the name column gives the country created {string}")
+    public void verify_that_the_name_column_gives_the_country_created(String string) {
+
+    }
+
 }

@@ -31,42 +31,7 @@ public class US_020_TC001_Api {
     StaffPojo actualData;
     int staffId;
 
-  /*
-  https://medunna.com/api/staff/22120
 
-{
-    "createdBy": "adminteam01",
-    "createdDate": "2023-03-13T09:53:24.060094Z",
-    "id": 22120,
-    "firstName": "Feride Su",
-    "lastName": "Toprak",
-    "birthDate": "2003-03-12T23:00:00Z",
-    "phone": "9954333347",
-    "gender": "FEMALE",
-    "bloodGroup": "Apositive",
-    "adress": "Emel street. 6/6",
-    "description": "new nurse",
-    "user": {
-        "createdBy": "anonymousUser",
-        "createdDate": "2023-03-01T15:44:06.774843Z",
-        "id": 12493,
-        "login": "su",
-        "firstName": "Feride",
-        "lastName": "",
-        "email": "su@gmail.com",
-        "activated": true,
-        "langKey": "en",
-        "imageUrl": null,
-        "resetDate": null,
-        "ssn": "581-01-0304"
-    },
-    "country": {
-        "id": 7751,
-        "name": "Turkey"
-    },
-    "cstate": null
-}
-   */
     @Given("user sends the GET request for created sataff data to the url")
     public void user_sends_the_get_request_for_created_sataff_data_to_the_url() {
 //      staffId =22120;
@@ -105,7 +70,7 @@ public class US_020_TC001_Api {
 
         */
 
-        System.out.println(expectedData);
+ //       System.out.println(expectedData);
 
 
         response = given().

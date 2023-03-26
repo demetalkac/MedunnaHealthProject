@@ -18,7 +18,7 @@ import static utilities.AdminAuthenticationMedunna.generateTokenForAdmin;
 
 public class US_029_TC001_Api {
 
-    Country country =new Country();
+
     CountryPostPojo expectedData1;
     Country actualData;
 
@@ -46,7 +46,7 @@ public class US_029_TC001_Api {
     @Given("sends POST request and get the response to create a country")
     public void sends_post_request_and_get_the_response_to_create_a_country() {
         expectedData1 =new CountryPostPojo("ITALY");
-        System.out.println(expectedData1);
+ //       System.out.println(expectedData1);
 
 
         response1 = given().
@@ -60,7 +60,7 @@ public class US_029_TC001_Api {
     public void verify_http_status_code_is_of_country_post_request(Integer statusCode1) {
 
         actualData = response1.as(Country.class);
-        System.out.println("actualData = " + actualData);
+ //       System.out.println("actualData = " + actualData);
 
         assertEquals(201, response1.getStatusCode());
 
@@ -85,20 +85,20 @@ public class US_029_TC001_Api {
         countryId = actualData.getId();
 
      expectedPutData = new Country(countryId,"Italy");
-        System.out.println(expectedPutData);
+  //      System.out.println(expectedPutData);
 
         response2 = given().
                 spec(spec).
                 header("Authorization","Bearer "+generateTokenForAdmin()).
                 when().contentType(ContentType.JSON).body(expectedPutData).put("/{first}/{second}");
-        response2.prettyPrint();
+  //      response2.prettyPrint();
 
     }
 
     @Then("verify HTTP status code is {int} of country put request")
     public void verify_http_status_code_is_of_country_put_request(Integer int1) {
         actualPutData = response2.as(Country.class);
-        System.out.println("actualPutData = " + actualPutData);
+  //      System.out.println("actualPutData = " + actualPutData);
 
         assertEquals(200,response2.getStatusCode());
     }
@@ -115,13 +115,13 @@ public class US_029_TC001_Api {
     @Given("user sends the GET request for created country data")
     public void user_sends_the_get_request_for_created_country_data() {
         expectedGetData = new Country(24305,"Italy");
-        System.out.println(expectedGetData);
+  //      System.out.println(expectedGetData);
 
         response3 = given().
                 spec(spec).
                 header("Authorization","Bearer "+generateTokenForAdmin()).
                 when().contentType(ContentType.JSON).body(expectedGetData).get("/{first}/{second}/{third}");
-        response3.prettyPrint();
+ //       response3.prettyPrint();
 
     }
 
@@ -149,7 +149,7 @@ public class US_029_TC001_Api {
                 headers("Authorization","Bearer "+generateTokenForAdmin(),"Content-Type",ContentType.JSON,
                         "Accept", ContentType.JSON).
                 when().contentType(ContentType.JSON).body(expectedDeleteData).delete("/{first}/{second}/{third}");
-        response4.prettyPrint();
+   //     response4.prettyPrint();
 
     }
     @Then("verify HTTP status code is {int} of country delete request")
